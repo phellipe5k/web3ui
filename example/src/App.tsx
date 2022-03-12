@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { ExampleComponent } from 'web3ui'
-import 'web3ui/dist/index.css'
+import { ExampleComponent } from 'web3-components'
 
 const App = () => {
   return <ExampleComponent text="Create React Library Example 😄" />
