@@ -1,9 +1,8 @@
 import React from 'react'
-
-import { ExampleComponent } from 'web3-components'
+import { ExampleComponent, Button } from 'web3-components'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <Button label='Button' border='gradient' gradient color={'red'} glow={'red'} onClick={() => alert('Pressed!!')} />
 }
 
 export default App
