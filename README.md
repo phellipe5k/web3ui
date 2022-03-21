@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save web3ui
+npm install --save web3ui-components
 ```
 
 ## Usage
