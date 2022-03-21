@@ -1,15 +1,21 @@
 import React from 'react';
-import { ButtonTypes } from './types';
+import {
+	ButtonTypes,
+	BorderGradientDefault,
+	GradientDefault,
+	TransparentDefault
+} from './types';
 import colors from '../colors'
 import * as S from './style';
 
 export const Button = ({
-  color = colors.primary,
+  	color = colors.primary,
+	gradientColors = ['rgb(1 134 218)', 'rgb(182 49 167)'],
 	textColor = 'white',
 	glow,
 	gradient,
 	border,
-  label,
+  	label,
 	transparency,
   ...props
 }: ButtonTypes) => {
@@ -24,6 +30,7 @@ export const Button = ({
 		border={ border }
 		textColor={ textColor }
 		gradient={gradient}
+		gradientColors={ gradientColors }
 		{...props}
     >
       {label}
@@ -31,18 +38,25 @@ export const Button = ({
   );
 };
 
-export const Gradient = ({ label = 'Button', textColor = 'white', border = '', gradient = true, glow = '#5a26d8' }: ButtonTypes) => {
-	const props = { label, textColor, border, gradient, glow };
-	return <Button {...props}>{label}</ Button>
+export const Gradient = (props: ButtonTypes) => {
+	return <Button { ...GradientDefault } {...props}>{props.label}</ Button>
 }
 
-export const BorderGradient = ({ label = 'Button', textColor = 'white', border = 'gradient', gradient = true, glow = '#5a26d8' }: ButtonTypes) => {
-	const props = { label, textColor, border, gradient, glow };
-	return <Button {...props}>{label}</ Button>
+export const BorderGradient = (props: ButtonTypes) => {
+	return <Button  { ...BorderGradientDefault }{...props}>{props.label}</ Button>
 }
 
-export default {
-	['Gradient']: () => <Gradient />,
-	['BorderGradient']: () => <BorderGradient />,
+
+export const Transparent = (props: ButtonTypes) => {
+	return <Button { ...TransparentDefault } {...props}>{props.label}</ Button>
+}
+
+
+export default Button;
+
+export const StoryBookSelect = {
+	['Gradient']: (props: ButtonTypes) => <Gradient { ...props } />,
+	['BorderGradient']: (props: ButtonTypes) => <BorderGradient { ...props } />,
+	['Transparent']: (props: ButtonTypes) => <Transparent { ...props } />,
 	['Default']: (props: ButtonTypes) => <Button { ...props } />
 };

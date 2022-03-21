@@ -4,9 +4,13 @@ export interface ButtonTypes {
     */
     gradient?: boolean;
     /**
+    * Select gradient colors to the button
+    */
+    gradientColors?: string[] | any;
+    /**
     * What background color to use
     */
-    color?: string | any;
+    color?: string;
     /**
     * Text color to use
     */
@@ -38,3 +42,23 @@ export interface ButtonTypes {
     */
     onClick?: () => void;
 }
+
+export const TransparentDefault = {
+    color: '#5a26d8',
+    transparency: '0.8',
+    glow: '#5a26d8',
+    border: '#391394'
+};
+
+export const GradientDefault = {
+    gradientColors: ['rgb(1 134 218)', 'rgb(182 49 167)'],
+    gradient: true,
+    glow: '#5a26d8'
+};
+
+export const BorderGradientDefault = {
+    border: 'gradient',
+    gradientColors: ['rgb(1 134 218)', 'rgb(182 49 167)'],
+    gradient: true,
+    glow: '#5a26d8'
+};
