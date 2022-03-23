@@ -38,7 +38,7 @@ export const Button = styled.button<ButtonTypes>`
         ${ border && css`
             border: 2px solid ${ border };
             ${ border == 'gradient' && css`
-                border: 2px solid transparent;
+                border: 2px solid transparent !important;
                 background-image: linear-gradient(${color}, ${color}), radial-gradient(circle at left top, ${typeof gradientColors == 'object' ? gradientColors.reduce((el: any, acc: any) => `${acc}, ${el}` ) : gradientColors.split(',').reduce((el: any, acc: any) => `${acc}, ${el}` ) });
                 background-origin: border-box;
                 background-clip: padding-box, border-box;
