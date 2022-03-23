@@ -20,20 +20,16 @@ const Template: ComponentStory<typeof Button.Default> = (args) => <Button.Defaul
 
 export const Primary = Template.bind({});
 Primary.args = {
-  label: 'Button'
 };
 
 export const Gradient: ComponentStory<typeof Button.Gradient> = ((args: any) => <Button.Gradient { ...args } />).bind({});
 Gradient.args = {
-  label: 'Button'
 };
 
 export const BorderGradient: ComponentStory<typeof Button.BorderGradient> = ((args: any) => <Button.BorderGradient { ...args } />).bind({});
 BorderGradient.args = {
-  label: 'Button'
 };
 
 export const Transparent: ComponentStory<typeof Button.Transparent> = ((args: any) => <Button.Transparent { ...args } />).bind({});
 Transparent.args = {
-  label: 'Button'
 };

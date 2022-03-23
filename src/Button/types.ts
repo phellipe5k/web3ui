@@ -1,5 +1,13 @@
 export interface ButtonTypes {
     /**
+    * Set the button width
+    */
+    width?: string;
+    /**
+    * Set the button height
+    */
+     height?: string;
+    /**
     * Use gradient colors on the button
     */
     gradient?: boolean;
@@ -37,6 +45,10 @@ export interface ButtonTypes {
     * Button contents
     */
     label?: string;
+    /**
+    * Children
+    */
+     children?: any;
     /**
     * Optional click handler
     */

@@ -15,14 +15,18 @@ export const Button = ({
 	glow,
 	gradient,
 	border,
-  	label,
 	transparency,
+	width,
+	height,
+	children = 'Button',
   ...props
 }: ButtonTypes) => {
 
 
   return (
     <S.Button
+		width={ width }
+		height={ height }
 		transparency={ transparency }
         type="button"
 		color={ color }
@@ -33,7 +37,7 @@ export const Button = ({
 		gradientColors={ gradientColors }
 		{...props}
     >
-      {label}
+      { children }
     </S.Button>
   );
 };
@@ -43,7 +47,7 @@ export const Gradient = (props: ButtonTypes) => {
 }
 
 export const BorderGradient = (props: ButtonTypes) => {
-	return <Button  { ...BorderGradientDefault }{...props}>{props.label}</ Button>
+	return <Button { ...BorderGradientDefault }{...props}>{props.label}</ Button>
 }
 
 
