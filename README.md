@@ -17,7 +17,7 @@ import React, { Component } from 'react';
 
 import Button from 'web3-components';
 // or
-import { Gradient } from 'web3-components';
+import { Gradient } from 'web3-components/Button';
 
 
 const Component = () => (
