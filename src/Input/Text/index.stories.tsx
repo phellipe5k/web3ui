@@ -12,6 +12,7 @@ export default {
     glow: { control: 'color' },
     border: { control: 'text' },
     gradientColors: { control: 'text' },
+    fontSize: { control: 'text' },
     transparency:{ control: 'number' }
   },
 } as ComponentMeta<typeof Input.Default>;

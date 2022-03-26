@@ -16,9 +16,9 @@ export const InputText = ({
 	transparency,
 	width = '250px',
 	height = '35px',
-	label = 'Senha',
+	label = 'Label',
 	children = 'Button',
-	type = 'password',
+	type = 'text',
 	onChange = (v: any) => console.log(v),
   ...props
 }: InputTextTypes) => {

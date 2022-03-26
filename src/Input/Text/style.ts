@@ -36,7 +36,7 @@ export const Container = styled.section<InputTextTypes>`
 
 
 export const Input = styled.input<InputTextTypes>`
-    ${({ gradientColors, color, textColor, gradient, glow, border, transparency, width, height }) => css`
+    ${({ gradientColors, color, fontSize, textColor, gradient, glow, border, transparency, width, height }) => css`
         width: ${ width || 'auto' };
         height: ${ height || 'auto' };
         outline: none;
@@ -46,7 +46,7 @@ export const Input = styled.input<InputTextTypes>`
         transition: 150ms ease-in-out ;
         background-color: ${color};
         color: ${ textColor } ;
-        font-size: 12px;
+        font-size: ${ fontSize || '12px'};
         &:focus {
             border: 2px solid ${ border };
         }
