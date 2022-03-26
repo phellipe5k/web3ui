@@ -43,16 +43,16 @@ export const Button = ({
 };
 
 export const Gradient = (props: ButtonTypes) => {
-	return <Button { ...GradientDefault } {...props}>{props.label}</ Button>
+	return <Button { ...GradientDefault } {...props}>{props.children}</ Button>
 }
 
 export const BorderGradient = (props: ButtonTypes) => {
-	return <Button { ...BorderGradientDefault }{...props}>{props.label}</ Button>
+	return <Button { ...BorderGradientDefault }{...props}>{props.children}</ Button>
 }
 
 
 export const Transparent = (props: ButtonTypes) => {
-	return <Button { ...TransparentDefault } {...props}>{props.label}</ Button>
+	return <Button { ...TransparentDefault } {...props}>{props.children}</ Button>
 }
 
 
