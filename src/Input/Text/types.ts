@@ -42,6 +42,10 @@ export interface InputTextTypes {
     */
     label?: string;
     /**
+    * Placeholder
+    */
+    placeholder?: string;
+    /**
     * Children
     */
      children?: any;

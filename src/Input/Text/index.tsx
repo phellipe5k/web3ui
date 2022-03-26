@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
 	InputTextTypes
 } from './types';
 import colors from '../../colors'
 import * as S from './style';
-import { useEffect } from '@storybook/addons';
+import useOutsideAlerter from '../../hooks/useOutsideAlerter';
 
 export const InputText = ({
   	color = colors.primary,
-	gradientColors = ['rgb(1 134 218)', 'rgb(182 49 167)'],
+	gradientColors = 'rgb(1 134 218), rgb(182 49 167)',
 	textColor = 'white',
 	glow,
 	gradient,
@@ -16,11 +16,16 @@ export const InputText = ({
 	transparency,
 	width = '250px',
 	height = '35px',
+	label = 'Senha',
 	children = 'Button',
+	type = 'password',
 	onChange = (v: any) => console.log(v),
   ...props
 }: InputTextTypes) => {
 	const [value, setValue] = useState('');
+	const [inputFocus, setInputFocus] = useState(false);
+	const inputRef = useRef(null);
+	useOutsideAlerter(inputRef, () =>  !value && setInputFocus(false), value);
 
 	useEffect(() => {
 		if (value) {
@@ -28,13 +33,15 @@ export const InputText = ({
 		}
 	}, [value])
   return (
-    <S.Container>
+    <S.Container color={ textColor } inputFocus={ inputFocus } >
 		<S.Input
+			ref={ inputRef }
+			onFocus={ () => setInputFocus(true) }
 			onChange={({ target }: { target: any }) => setValue(target.value)}
 			width={ width }
 			height={ height }
 			transparency={ transparency }
-			type="button"
+			type={ type }
 			color={ color }
 			glow={ glow }
 			border={ border }
@@ -44,6 +51,7 @@ export const InputText = ({
 			value={ value }
 			{...props}
 		/>
+		<span>{ label }</span>
     </S.Container>
   );
 };
