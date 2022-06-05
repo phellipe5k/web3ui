@@ -16,16 +16,18 @@ export const NftCard = styled.section<NftCardTypes>`
 `;
 
 export const Image = styled.div`
-    width: 100%;
-    height: 53%;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 18px;
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 2px;
-    background-image: url('https://p4.wallpaperbetter.com/wallpaper/537/788/16/bring-me-the-horizon-thats-the-spirit-wallpaper-preview.jpg');
-    background-position: center;
-    background-size:  cover;
-    position: relative;
+    ${({ nft }) => css`
+        width: 100%;
+        height: 53%;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 18px;
+        border-bottom-left-radius: 18px;
+        border-bottom-right-radius: 2px;
+        background-image: url(${nft});
+        background-position: center;
+        background-size:  cover;
+        position: relative;
+    `}
 `;
 
 export const ContentWrapper = styled.article`

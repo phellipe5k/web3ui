@@ -68,6 +68,11 @@ export interface NftCardTypes {
      * Nft Information
      */
     info: InfoTypes;
+    
+    /**
+     * Nft Image
+     */
+    nft: string;
 }
 /*
 export const TransparentDefault = {

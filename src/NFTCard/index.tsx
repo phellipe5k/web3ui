@@ -18,6 +18,7 @@ export const NftCard = ({
         
     },
     glow,
+    nft = 'https://p4.wallpaperbetter.com/wallpaper/537/788/16/bring-me-the-horizon-thats-the-spirit-wallpaper-preview.jpg',
     gradientColors,
     info = { collection_logo: 'https://img.myloview.com.br/adesivos/1960s-hippie-wallpaper-design-trippy-glitchy-background-for-psychedelic-60s-70s-parties-with-bright-acid-rainbow-colors-and-groovy-geometric-wavy-pattern-700-217844969.jpg', collection_name: 'Fucking NFT Awesome', name: 'BMTH #2548'  },
     children = <>
@@ -102,7 +103,7 @@ export const NftCard = ({
             {...props}
         >
 
-            <S.Image>
+            <S.Image nft={ nft }>
                 { limitDate && (
                     <S.HourCounter hovered={hovered}>
                     {time}
