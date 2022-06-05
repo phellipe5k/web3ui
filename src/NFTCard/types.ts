@@ -1,3 +1,16 @@
+
+interface ColorsTypes {
+    text_primary: string,
+    text_secondary: string,
+    background: string,
+    border: string
+}
+
+interface InfoTypes {
+    collection_logo: string,
+    collection_name: string,
+    name: string 
+}
 export interface NftCardTypes {
     /**
     * Set the button width
@@ -38,7 +51,7 @@ export interface NftCardTypes {
     /**
      * colorsPallete
      */
-    colorsPallete?: string;
+    colorsPallete?: ColorsTypes;
     /**
      * favorite
      */
@@ -51,6 +64,10 @@ export interface NftCardTypes {
      * limit date
      */
     limitDate?: any;
+    /**
+     * Nft Information
+     */
+    info: InfoTypes;
 }
 /*
 export const TransparentDefault = {

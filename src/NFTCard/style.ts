@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { NftCardTypes } from './types';
 
 export const NftCard = styled.section<NftCardTypes>`
-    ${({ width, height }) => css`
+    ${({ width, height, pallete }) => css`
         width: ${ width || '230px' };
         height: ${ height || '370px' };
         padding: 16px;
@@ -10,14 +10,14 @@ export const NftCard = styled.section<NftCardTypes>`
         border-top-right-radius: 18px;
         border-bottom-left-radius: 18px;
         border-bottom-right-radius: 2px;
-        background-color: #161334;
-        border: 2px solid #253765;
+        background-color: ${ pallete.background };
+        border: 2px solid ${ pallete.border };
     `}
 `;
 
 export const Image = styled.div`
     width: 100%;
-    height: 55%;
+    height: 53%;
     border-top-left-radius: 2px;
     border-top-right-radius: 18px;
     border-bottom-left-radius: 18px;
@@ -29,7 +29,7 @@ export const Image = styled.div`
 `;
 
 export const ContentWrapper = styled.article`
-    height: 45%;
+    height: 47%;
 `;
 
 export const ButtonsWrapper = styled.div`
@@ -53,45 +53,64 @@ export const Avatar = styled.img`
 
 
 export const PInfo = styled.div`
-    color: white;
     width: calc(100% - 60px );
 `;
 
 
 export const Name = styled.h3`
-    margin: 0;
-    padding: 0;
+    ${({ color }) => css`
+        margin: 0;
+        padding: 0;
+        font-size: 19px;
+        color: ${ color.text_primary };
+    `}
+
 `;
 
 
 export const Nickname = styled.p`
-
-    margin: 0;
-    padding: 0;
-    margin-top: 4px;
-    font-size: 11px;
+    ${({ color }) => css`
+        margin: 0;
+        padding: 0;
+        margin-top: 4px;
+        font-size: 12px;
+        color: ${ color.text_secondary };
+    `}
 `;
 
 export const PriceInfo = styled.div`
     padding: 8% 0;
+    display: flex;
 `;
 
 
 export const Text = styled.p`
-    margin: 0;
-    padding: 0;
-    margin-bottom: 8px;
-    color: white;
-    font-size: 10px;
+    ${({ color }) => css`
+        margin: 0;
+        padding: 0;
+        margin-bottom: 8px;
+        color: ${color.text_secondary};
+
+        font-size: 14px;
+    `}
 `;
 
 export const Price = styled.p`
-    margin: 0;
-    color: white;
-    padding: 0;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
+   ${({ color }) => css`
+        margin: 0;
+        color: ${ color.text_primary };
+        padding: 0;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        span {
+
+            font-size: 14px;
+            margin-left: 4px;
+            margin-top:  5px;
+        }
+    `}
+
 `
 
 export const HourCounter = styled.div`
@@ -153,4 +172,34 @@ export const Wishlist = styled.div`
             transform: translateY(0px);        
         ` }
     `}
+`;
+export const Box = styled.div`
+${({ width }: { width?: string }) => css`
+    width: '50%';
+    ${ width && css`
+        width: ${ width };
+    ` }
+`}
+`;
+
+export const Blockchain = styled.section`
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:  center;
+    p {    
+        margin: 0;
+        font-size: 14px !important;
+    }
+`;
+
+export const Icon = styled.div`
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    background-color: #CAFC01;
+    justify-content: center;
+    align-items: center;
 `;
