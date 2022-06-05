@@ -11,7 +11,7 @@ const grow = keyframes`
 `;
 
 export const Button = styled.button<ButtonTypes>`
-    ${({ gradientColors, color, textColor, gradient, glow, border, transparency, width, height }) => css`
+    ${({ gradientColors, color, textColor, gradient, glow, border, transparency, width, height, futurist }) => css`
         background-color: ${ color }};
         color: ${ textColor };
         padding: 12px 32px;
@@ -46,6 +46,13 @@ export const Button = styled.button<ButtonTypes>`
         ` }
         ${ transparency && css`
             opacity: ${ transparency };
+        ` }
+        ${ futurist && css`
+            border-radius: none;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 4px;
         ` }
     `}
 `

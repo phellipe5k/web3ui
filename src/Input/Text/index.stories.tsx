@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { StoryBookSelect as Input } from '.';
-
+console.log(Input.Default)
 export default {
   title: 'Input Text',
   component: Input.Default,
