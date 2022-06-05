@@ -1,4 +1,4 @@
-export interface ButtonTypes {
+export interface InputTextTypes {
     /**
     * Set the button width
     */
@@ -38,17 +38,13 @@ export interface ButtonTypes {
     */
     border?: 'gradient' | string
     /**
-    * How large should the button be?
-    */
-    size?: 'small' | 'medium' | 'large';
-    /**
     * Button contents
     */
     label?: string;
     /**
-    * Button style
+    * Placeholder
     */
-    futurist?: boolean;
+    placeholder?: string;
     /**
     * Children
     */
@@ -56,25 +52,10 @@ export interface ButtonTypes {
     /**
     * Optional click handler
     */
-    onClick?: () => void;
+    onChange?: any;
+    /**
+    * Input value
+    */
+    value?: string;
 }
 
-export const TransparentDefault = {
-    color: '#5a26d8',
-    transparency: '0.8',
-    glow: '#5a26d8',
-    border: '#391394'
-};
-
-export const GradientDefault = {
-    gradientColors: ['rgb(1 134 218)', 'rgb(182 49 167)'],
-    gradient: true,
-    glow: '#5a26d8'
-};
-
-export const BorderGradientDefault = {
-    border: 'gradient',
-    gradientColors: ['rgb(1 134 218)', 'rgb(182 49 167)'],
-    gradient: true,
-    glow: '#5a26d8'
-};

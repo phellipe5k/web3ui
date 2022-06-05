@@ -46,10 +46,6 @@ export interface ButtonTypes {
     */
     label?: string;
     /**
-    * Button style
-    */
-    futurist?: boolean;
-    /**
     * Children
     */
      children?: any;

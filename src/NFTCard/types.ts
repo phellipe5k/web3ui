@@ -1,4 +1,17 @@
-export interface ButtonTypes {
+
+interface ColorsTypes {
+    text_primary: string,
+    text_secondary: string,
+    background: string,
+    border: string
+}
+
+interface InfoTypes {
+    collection_logo: string,
+    collection_name: string,
+    name: string 
+}
+export interface NftCardTypes {
     /**
     * Set the button width
     */
@@ -7,10 +20,6 @@ export interface ButtonTypes {
     * Set the button height
     */
      height?: string;
-    /**
-    * Use gradient colors on the button
-    */
-    gradient?: boolean;
     /**
     * Select gradient colors to the button
     */
@@ -24,19 +33,9 @@ export interface ButtonTypes {
     */
     textColor?: string;
     /**
-    * Button transparency
-    */
-     transparency?: string;
-
-    /**
     * Glow effect on button hover
     */
     glow?: string;
-
-    /**
-    * Border style
-    */
-    border?: 'gradient' | string
     /**
     * How large should the button be?
     */
@@ -46,19 +45,36 @@ export interface ButtonTypes {
     */
     label?: string;
     /**
-    * Button style
-    */
-    futurist?: boolean;
-    /**
     * Children
     */
      children?: any;
     /**
-    * Optional click handler
-    */
-    onClick?: () => void;
+     * colorsPallete
+     */
+    colorsPallete?: ColorsTypes;
+    /**
+     * favorite
+     */
+    favorite?: boolean;
+    /**
+     * favorite
+     */
+    setFavoriteStatus?: any
+    /**
+     * limit date
+     */
+    limitDate?: any;
+    /**
+     * Nft Information
+     */
+    info: InfoTypes;
+    
+    /**
+     * Nft Image
+     */
+    nft: string;
 }
-
+/*
 export const TransparentDefault = {
     color: '#5a26d8',
     transparency: '0.8',
@@ -78,3 +94,4 @@ export const BorderGradientDefault = {
     gradient: true,
     glow: '#5a26d8'
 };
+*/

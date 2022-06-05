@@ -19,7 +19,6 @@ export const Button = ({
 	width,
 	height,
 	children = 'Button',
-	futurist = true,
   ...props
 }: ButtonTypes) => {
 
@@ -36,7 +35,6 @@ export const Button = ({
 		textColor={ textColor }
 		gradient={gradient}
 		gradientColors={ gradientColors }
-		futurist={ futurist }
 		{...props}
     >
       { children }
@@ -45,20 +43,20 @@ export const Button = ({
 };
 
 export const Gradient = (props: ButtonTypes) => {
-	return <Button { ...GradientDefault } {...props}>{props.children}</ Button>
+	return <Button { ...GradientDefault } {...props}>{props.label}</ Button>
 }
 
 export const BorderGradient = (props: ButtonTypes) => {
-	return <Button { ...BorderGradientDefault }{...props}>{props.children}</ Button>
+	return <Button { ...BorderGradientDefault }{...props}>{props.label}</ Button>
 }
 
 
 export const Transparent = (props: ButtonTypes) => {
-	return <Button { ...TransparentDefault } {...props}>{props.children}</ Button>
+	return <Button { ...TransparentDefault } {...props}>{props.label}</ Button>
 }
 
 
-// export default Button;
+export default Button;
 
 export const StoryBookSelect = {
 	['Gradient']: (props: ButtonTypes) => <Gradient { ...props } />,
@@ -66,5 +64,3 @@ export const StoryBookSelect = {
 	['Transparent']: (props: ButtonTypes) => <Transparent { ...props } />,
 	['Default']: (props: ButtonTypes) => <Button { ...props } />
 };
-
-export default StoryBookSelect;
