@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styles from './styles.module.css'
 import { StoryBookSelect }from './Button';
-import { StorybookSelect as NFTCadSelect } from './NFTCard';
+import { StoryBookSelect as NFTCadSelect } from './NFTCard/index';
 
 interface Props {
   text: string

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import styled, { css, keyframes } from 'styled-components';
 import { InputTextTypes } from './types';
 import colors from '../../colors';
